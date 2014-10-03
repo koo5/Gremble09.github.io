@@ -1,0 +1,102 @@
+
+/*
+ * Imports the "Droid Serif" font
+ */
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+
+body {
+    padding-top: 0px;
+    margin:0px;
+    background-color: #00520B;
+}
+
+header {
+    /*background-color: #009E15;*/
+    margin-top:0px;
+    margin-left:10px;
+    padding-left:150px;
+    padding-top:0px;
+    padding-bottom: 24px;
+    /*border-style: solid;*/
+    border-width:1px;
+}
+
+#heading {
+    margin-top:0px;
+    margin-left:20px;
+    margin-right:750px;
+    margin-bottom:0px;
+    padding-top:20px;
+
+    font-size:24px;
+}
+
+#heading h1 {
+    margin-top:0px;
+    margin-left:20px;
+    margin-bottom: 0px;
+    padding-top:0px;
+}
+/*header h1 {
+    margin-top:0px;
+    margin-left: 20px;
+    margin-bottom:0px;
+    padding-top:20px;
+    
+
+    font-size:54px;
+}*/
+
+header p {
+    padding-left: 15px; 
+    font-family:"Droid Serif";
+}
+
+footer {
+    padding-top: 24px;
+    padding-bottom:24px;
+
+    font-size:12px;
+    text-align:center;
+}
+
+footer a:link{
+    color:#C9D404;
+}
+
+nav {
+    margin-top:15px;
+    margin-left:35px;
+    margin-right:199px;
+    background: linear-gradient(#209930,#00520B);
+}
+nav ul{
+    padding:0px;
+    margin:0px;
+}
+nav li {
+    display: inline-block;
+    list-style: none;
+    padding: 1px 10px;
+    padding-top:16px;
+    padding-bottom:16px;
+    margin-top: 0px;
+    margin-bottom:0px;
+}
+
+#content {
+    background-color:white;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-style:solid;
+    border-width:1px;
+    border-top-width:0px;
+}
+
+article {
+    padding:30px;
+    line-height:1.5;
+    text-align: justify;
+
+    font-family:"Droid Serif";
+}
