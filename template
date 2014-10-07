@@ -1,17 +1,18 @@
 <!DOCTYPE HTML>
 <html>
+
     <head>
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <title>About</title>
+        <title>Home</title>
     </head>
 
     <body>
 
         <header>
             <div id="heading">
-            <h1>About</h1>
+                <h1>Home</h1>
             </div>
-            <!--
+            <p>This is the header of the page</p>
         <nav id="main_navigation">
             <ul>
                 <li>Home</li>
@@ -20,18 +21,11 @@
             </ul>
         </nav>
         </header>
-            -->
-        <div id="content">
 
-        <article>
-            <p>Jaco Stroebel is a Applied Mathematics student at the University of Pretoria, South Africa.</p>
-            <p>He likes to spend his time not doing assigned work and rather spend it doing interesting things like learning how to use HTML/CSS and interesting mathematics like Number Theory and Topology. </p>
-        </article>
-        </div>
-
+<body>
+    
         <footer>
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
         </footer>
 
-    </body>
-</html>
+</body>
