@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        {% include preamble.html %}
+        <title>{{page.title}}</title>
+    </head>
+    <body>
+        {% include header.html %}
+        <div id="content">
+            <article>
+                {{content}}
+                {% include postindex.html %}
+            </article>
+        </div>
+        {% include footer.html %}
+</html>
