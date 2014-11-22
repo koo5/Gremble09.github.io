@@ -1,6 +1,11 @@
-defaults:
-    scope:
-        path: ""
-    values:
-        layout: "default"
-    baseurl: "Gremble09.github.io"
+name: Grumbles
+markdown: redcarpet
+highlighter: pygments
+github: https://www.github.com/Gremble09
+about: I study mathematics and the theory of computability. I try not to write code if I can help it. This blog may contain useful posts from time to time.
+urls:
+    - text: github
+      url: https://github.com/Gremble09
+    - text: email
+      url: mailto:J.Stroebel@tuks.co.za
+author: Jaco Stroebel
