@@ -3,62 +3,66 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
-        
+
         <!-- Bootstrap core CSS -->
-    	<link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <body>
+        <!-- Entire page container -->
+        <div class="container">
+            <!-- Left column -->
+            <div class="col-sm-3">
+                <h1>{{ site.name }}</h1>
+                <img id="about" src="/img/logo.jpg" height="75px" width="75px" /><br />	
 
-		<div class="container">
+                <strong>navigation</strong><br />
+                <a href="/">home</a> <br />
+                {% for i in site.urls %}
+                    <a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
+                {% endfor %}
 
-			<div class="col-sm-3">
-				<h1>{{ site.name }}</h1>
-				<img id="about" src="/img/logo.jpg" height="75px" width="75px" /><br />	
-
-				<strong>navigation</strong><br />
-				<a href="/">home</a> <br />
-				{% for i in site.urls %}
-					<a class="about" href="{{ i.url }}">{{ i.text }}</a><br />
-				{% endfor %}
-				
-				{% if site.about %}
-				<div id="about">
-					<strong>about</strong><br />
-					{{ site.about }}
-				</div>
-				{% endif %}
-			</div>
-
-			<div class="col-sm-8 col-offset-1">
-				
-				{{ content }}
-				
-				<footer>
+                {% if site.about %}
+                <div id="about">
+                <strong>about</strong><br />
+                    {{ site.about }}
+                </div>
+                {% endif %}
+            </div>
+            <!-- Right column -->
+            <div class="col-sm-8 col-offset-1">
+                {{ content }}
+                <footer>
                     &copy;{{page.date | date: "%Y"}} {{ site.name }}
-					{% if site.github %} 
-						- <a href="{{ site.github }}">{{ site.github }}</a>
-					{% endif %}
-				</footer>
-			</div>
-		
-		</div>
+                    {% if site.github %} 
+                        - <a href="{{ site.github }}">{{ site.github }}</a>
+                    {% endif %}
+                </footer>
+            </div>
+        </div>
 
-        <!-- I don't know why this is here, but I will comment it out for now.
-            perhaps there will be use for it later -->
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script> -->
+<!-- Placed at the end of the document so the pages load faster
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55593719-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     </body>
 </html>
