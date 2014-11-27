@@ -12,6 +12,16 @@ body {
     max-width: 730px;
   }
 }
+
+/**
+ * Changing mathJax
+ */
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+}
 /**
  * //////////////////////////
  * Font and link declarations
