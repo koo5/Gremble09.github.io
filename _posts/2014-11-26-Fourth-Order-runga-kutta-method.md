@@ -6,8 +6,8 @@ permalink: fourth-order-runga-kutta
 tags: [python, runga-kutta, initial value problems]
 ---
 
-When modelling phenomena we often want a way of describing change related to the phenomena, population growth, particle speed, etcetera.
-More often than not these differential equations are what is called non-elementary, meaning that they cannot be solved using trivial integration methods.
+When modelling phenomena we often want a way of describing change related to the phenomena, like population growth, particle speed, etcetera.
+More often than not these differential equations <?A differential equation is any function that is a derivative of another function, for example describing the rate of change[http://en.wikipedia.org/wiki/Differential_equation]> are what is called non-elementary, meaning that they cannot be solved using trivial (analytical?) integration methods.
 For such problems we have to use computational approximation.
 There are various algorithms available for these approximations, some of them are trivial to reproduce by hand, some not so much.
 
@@ -16,7 +16,7 @@ There are various algorithms available for these approximations, some of them ar
 Let us consider the initial value problem
 
 $$
-\frac{\text{d}y}{\text{dt}} = f(\text{t}, y(\text{t}))
+\frac{\text{d}y}{\text{dt}} = f(\text{t}, y(\text{t})) (should we use \Delta?)
 \; \text{with} \; y(\tau) = b
 $$
 
@@ -55,33 +55,38 @@ $$
 
 From here we add `\(y(\text{t})\)` on both sides and substitute in the appropriate function values then we have the approximation that we want.
 The snag however, is that we do not have the function values since we do not know what the function is.
-We solve this problem my approximating those values and using each successive predictive value to approximate the next.
+We solve this problem by approximating those values and using each successive predictive value to approximate the next.
 The shorter we take our steps, that is the larger **N** is, the more accurate our approximation will be. 
 
 ####Implementation 
 
-Let `\(y'(\text{t}) = \text{t}y + y + \text{t}^2\)` with `\(y(0) = 2\)`.
+Let `\(y'(\text{t}) = \text{t}y + y + \text{t}^2\)` <? this is the differential equation (function?) that we want to approximate> with `\(y(0) = 2\)` <? a known value at point 0>.
 We can approximate any arbitrary `\(\text{T}\)`, in this case it will be 0.4.
+(any arbitrary y(T), in this case for T=0.4)?
 
 
 ```Python
 def f(y, t):
     return t*y + y + t**2
 
-tau = 0
-T = 0.4
-N = 100
-h = (T - tau) / N
+tau = 0 # initial t
+T = 0.4 # final t
+N = 100 # number of steps
+h = (T - tau) / N # step size
 
-t = [0]
-y = [2]
+t = [0] # t in each step
+y = [2] # results
 
 for k in range(0, N):
-    F_1 = f(y[k], t[k])
+    F_1 = f(y[k], t[k]) <?call our mysterious function with the first (or current) result and current t>
     F_2 = f((y[k] + h/2*F_1), (t[k] + h/2))
     F_3 = f((y[k] + h/2*F_2), (t[k] + h/2))
     F_4 = f((y[k] + h*F_3), (t[k] + h))
+    
     y.append(y[k] + h/6*(F_1 + 2*F_2 + 2*F_3 + F_4))
+    <? in other words, the result consists of 6 parts, one part F_1,
+    two parts each F_2 and F_3 and one part F_4, all scaled by the step size>
+    
     t.append(t[k] + h)
 
 print(y[N])
